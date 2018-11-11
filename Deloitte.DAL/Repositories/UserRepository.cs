@@ -24,6 +24,18 @@ namespace Deloitte.DAL
             return allUsers.FirstOrDefault(u => string.Equals(u.Id.ToString(), userId, StringComparison.OrdinalIgnoreCase));
         }
 
+        public async Task<byte[]> GetPhotoAsync(string userId)
+        {
+            var allUsers = await usersDb.Value;
+            var user = allUsers.FirstOrDefault(u => string.Equals(u.Id.ToString(), userId, StringComparison.OrdinalIgnoreCase));
+            if (user != null) {
+                var absolutePath = DeloitteHostingEnvironment.Get(string.Format(photoFileTemplate, user.PhotoName));
+                var imageBytes = File.ReadAllBytes(absolutePath);
+                return imageBytes;
+            }
+            return new byte[0];
+        }
+
         #region private
 
         private static Lazy<Task<IList<User>>> usersDb = new Lazy<Task<IList<User>>>(() => Task.Run(ReadUsersFromFile));
@@ -46,6 +58,7 @@ namespace Deloitte.DAL
         }
 
         private const string usersFilePath = "\\data\\data.json";
+        private const string photoFileTemplate = "\\data\\pictures\\{0}";
 
         #endregion
     }

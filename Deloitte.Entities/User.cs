@@ -10,7 +10,7 @@ namespace Deloitte.Entities
         public Guid Id { get; set; }
 
         [JsonProperty("picture")]
-        public String LogoPath { get; set; }
+        public String PhotoName { get; set; }
 
         [JsonProperty("name")]
         public String Name { get; set; }

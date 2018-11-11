@@ -10,5 +10,7 @@ namespace Deloitte.DAL.Interfaces
         Task<IList<UserData>> ListAllAsync();
 
         Task<User> GetUserAsync(string userid);
+
+        Task<byte[]> GetPhotoAsync(string userId);
     }
 }

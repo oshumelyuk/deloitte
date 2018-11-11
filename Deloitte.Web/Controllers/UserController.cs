@@ -29,5 +29,13 @@ namespace Deloitte.Web.Controllers
             var user = await userRepository.GetUserAsync(id);
             return View(user);
         }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult> Photo(string id)
+        {
+            var imageData = await userRepository.GetPhotoAsync(id);
+            return File(imageData, "image/jpg");
+        }
     }
 }
