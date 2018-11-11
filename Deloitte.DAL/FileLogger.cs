@@ -24,16 +24,21 @@ namespace Deloitte.DAL
             return WriteFormattedMessageAsync(formattedMessage);
         }
 
-        private async Task WriteFormattedMessageAsync(string message)
+        private Task WriteFormattedMessageAsync(string message)
         {
-            //add semaphore
-           /* using (var stream = File.Open(logsFilePath, FileMode.OpenOrCreate, FileAccess.Write))
+            var logsAbsolutePath = DeloitteHostingEnvironment.Get(logsFilePath);
+            lock (_locker)
             {
-                var bytes = System.Text.Encoding.UTF8.GetBytes(message);
-                await stream.WriteAsync(bytes, 0, bytes.Length);
-            }*/
+                if (!File.Exists(logsAbsolutePath))
+                {
+                    File.Create(logsAbsolutePath);
+                }
+                File.AppendAllText(logsFilePath, message, System.Text.Encoding.UTF8);
+            }
+            return Task.CompletedTask;
         }
 
-        private const string logsFilePath = "data\\logs.txt";
+        private const string logsFilePath = "\\data\\logs.txt";
+        private static readonly object _locker = new object();
     }
 }

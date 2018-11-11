@@ -1,36 +1,36 @@
 ﻿html {
-   height: 100%;
-   color: #191D28;
-   background-color: #eee;
-   min-width: 600px;
+    height: 100%;
+    color: #191D28;
+    background-color: #eee;
+    min-width: 600px;
 }
 
 body, .body-content {
-   min-height: 100%;
-   height: 100%;
-   width: 100%;
-   margin: 0;
-   padding: 0;
-   background-color: #eee;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
 }
 
 .dl-horizontal dt {
     white-space: normal;
 }
 
-.field-validation-error{
+.field-validation-error {
     color: darkred;
     font-size: 0.8em;
 }
 
-input[type="button"], input[type="submit"]{
+input[type="button"], input[type="submit"] {
     background: #191D28;
     color: #eee;
 }
 
 input[type="button"]:hover, input[type="submit"]:hover,
 input[type="button"]:focus, input[type="submit"]:focus,
-input[type="button"]:active, input[type="submit"]:active{
+input[type="button"]:active, input[type="submit"]:active {
     background: #262C38 !important;
     color: #eee !important;
 }
@@ -41,23 +41,23 @@ input[type="button"]:active, input[type="submit"]:active{
     color: #eee;
 }
 
-.container > header a, .container > header a:visited, .container > header a:active, .container > header a:focus{
+.container > header a, .container > header a:visited, .container > header a:active, .container > header a:focus {
     color: #eee;
     text-decoration: underline;
 }
 
-.container a, .container a:visited, .container a:active, .container a:focus{
+.container a, .container a:visited, .container a:active, .container a:focus {
     color: #191D28;
     text-decoration: underline;
 }
 
-#userMenu{
+#userMenu {
     line-height: 70px;
     text-align: right;
     margin-right: 15px;
 }
 
-footer{
+footer {
     background: #191D28;
     position: absolute;
     width: 100%;
@@ -67,12 +67,12 @@ footer{
     color: #eee;
 }
 
-footer p{
+footer p {
     line-height: 15px;
     margin: 5px 0px;
 }
 
-h1.logo{
+h1.logo {
     margin: 0px;
     line-height: 70px;
     margin-left: 15px;
@@ -80,18 +80,59 @@ h1.logo{
     display: inline-block;
 }
 
-.content{
+.content {
     margin: 0px 15px;
     width: 80%;
 }
 
-table.grid{
+table.grid {
     width: 100%;
 }
 
-table.grid tr td, table.grid tr th{
+table.grid tr td, table.grid tr th {
     border: 1px solid #aaa;
     border-collapse: collapse;
     background: #fff;
     padding: 5px;
+}
+
+#usersGrid tr, #userGrid tr td {
+    display: none;
+}
+
+#usersGrid tr.visible {
+    display: block;
+    display: table-row;
+}
+
+#userGrid tr td {
+    display: block;
+    display: table-cell;
+}
+
+#userTags li {
+    list-style-image: none;
+    list-style: none;
+    display: inline-block;
+    padding-left: 35px;
+}
+
+#userTags {
+    display: inline-block;
+    position: relative;
+}
+
+#userTags .remove-link{
+    color: darkred;
+    display: inline-block;
+    border: 1px solid darkred;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 0.8em;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0px 4px;
+    position: absolute;
+    top: 2px;
+    margin-left: 2px;
 }

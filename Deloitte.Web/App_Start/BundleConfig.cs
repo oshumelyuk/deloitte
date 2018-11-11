@@ -20,7 +20,9 @@ namespace Deloitte.Web
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/utils.js",
+                      "~/Scripts/users.js"));
 
             bundles.Add(new StyleBundle("~/Content/auth-styles").Include(
                       "~/Content/bootstrap.css",

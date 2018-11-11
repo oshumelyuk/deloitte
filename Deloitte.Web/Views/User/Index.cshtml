@@ -6,36 +6,50 @@
 
 <section class="content">
     <h2>Users</h2>
-    <table class="grid"> 
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Company</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Tags</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (var i = 0; i < Model.Count; i++)
-            {
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="title">No users available.. </div>
+    }
+    else
+    {
+        <div class="selected-tags" style="display: none;">
+            <span>Selected tags: </span>
+            <ul id="userTags">
+            </ul>
+        </div>
+        <table class="grid" id="usersGrid">
+            <thead>
                 <tr>
-                    <td><span>@(i + 1)</span></td>
-                    <td><span>@Html.ActionLink(Model[i].Name, "Details", "User", new { @id = Model[i].Id}, new { })</span></td>
-                    <td><span>@Html.Raw(Model[i].Company)</span></td>
-                    <td><span>@Html.Raw(Model[i].Email)</span></td>
-                    <td><span>@Html.Raw(Model[i].Phone)</span></td>
-                    <td>
-                        @foreach (var tag in Model[i].Tags)
-                        {
-                            <span>#@Html.Raw(tag)</span>
-                        }
-                    </td>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Tags</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Model.Count; i++)
+                {
+                    <tr class="visible">
+                        <td><span>@(i + 1)</span></td>
+                        <td><span>@Html.ActionLink(Model[i].Name, "Details", "User", new { @id = Model[i].Id }, new { })</span></td>
+                        <td><span>@Html.Raw(Model[i].Company)</span></td>
+                        <td><span>@Html.Raw(Model[i].Email)</span></td>
+                        <td><span>@Html.Raw(Model[i].Phone)</span></td>
+                        <td>
+                            @foreach (var tag in Model[i].Tags)
+                            {
+                                <span>
+                                    <a class="user-tag" href="javascript: void(0)" onclick="Deloitte.selectTag('@tag')">#@Html.Raw(tag)</a>
+                                </span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 </section>
 
 
