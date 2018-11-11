@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using Deloitte.DAL.Interfaces;
-using Deloitte.Web.DryIoc;
-using DryIoc;
 
 namespace Deloitte.Web.Controllers
 {
@@ -11,9 +9,9 @@ namespace Deloitte.Web.Controllers
     {
         private readonly IUserRepository userRepository;
 
-        public UserController()
+        public UserController(IUserRepository userRepository)
         {
-       //     userRepository = IoC.Instance.Resolve<IUserRepository>();
+            this.userRepository = userRepository;
         }
 
         [HttpGet]

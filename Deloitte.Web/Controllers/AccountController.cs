@@ -1,19 +1,17 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using Deloitte.DAL.Interfaces;
-using Deloitte.Web.DryIoc;
 using Deloitte.Web.ViewModels;
-using DryIoc;
 
 namespace Deloitte.Web.Controllers
 {
     public class AccountController : BaseController
     {
-        private readonly IAccountRepository accountRepository;
+        private IAccountRepository accountRepository;
 
-        public AccountController()
+        public AccountController(IAccountRepository accountRepository)
         {
-       //     accountRepository = IoC.Instance.Resolve<IAccountRepository>();
+            this.accountRepository = accountRepository;
         }
 
         [HttpGet]

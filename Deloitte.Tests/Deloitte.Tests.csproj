@@ -63,6 +63,10 @@
       <Project>{294ED14A-2BC2-489D-BCD1-9DD9B5CED9E9}</Project>
       <Name>Deloitte.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Deloitte.DAL\Deloitte.DAL.csproj">
+      <Project>{2A7332BD-48D2-47FA-B857-6A81BC92924B}</Project>
+      <Name>Deloitte.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Deloitte.Entities\Deloitte.Entities.csproj">
       <Project>{ef7394e3-b32d-417c-b80d-7183ec2fd968}</Project>
       <Name>Deloitte.Entities</Name>
