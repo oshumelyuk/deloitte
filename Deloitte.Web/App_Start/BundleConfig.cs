@@ -24,7 +24,8 @@ namespace Deloitte.Web
 
             bundles.Add(new StyleBundle("~/Content/auth-styles").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/user-details.css"));
 
             bundles.Add(new StyleBundle("~/Content/anonymous-styles").Include(
               "~/Content/bootstrap.css",

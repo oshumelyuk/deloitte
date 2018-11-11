@@ -1,0 +1,27 @@
+﻿.user-photo{
+    width: 150px;
+    height: 150px;
+    background-image: url(/content/images/no-image.svg);
+    border: 1px solid #aaa;
+    background-size: contain;
+    border-radius: 75px;
+    float: left;
+    margin: 15px 15px 15px 0px; 
+}
+
+.user-details{
+    float: left;
+    margin: 15px; 
+    width: 800px;
+}
+
+.user-details .label{
+    color: #191D28;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: right;
+}
+
+.user-details .form-group{
+    clear: both;
+}

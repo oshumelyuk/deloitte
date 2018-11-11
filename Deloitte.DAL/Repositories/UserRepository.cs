@@ -18,6 +18,12 @@ namespace Deloitte.DAL
             return allUsers.Select(u => new UserData(u)).ToList();
         }
 
+        public async Task<User> GetUserAsync(string userId)
+        {
+            var allUsers = await usersDb.Value;
+            return allUsers.FirstOrDefault(u => string.Equals(u.Id.ToString(), userId, StringComparison.OrdinalIgnoreCase));
+        }
+
         #region private
 
         private static Lazy<Task<IList<User>>> usersDb = new Lazy<Task<IList<User>>>(() => Task.Run(ReadUsersFromFile));

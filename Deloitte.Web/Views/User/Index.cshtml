@@ -1,14 +1,15 @@
-﻿@model IEnumerable<Deloitte.Contracts.UserData>
+﻿@model IList<Deloitte.Contracts.UserData>
 
 @{
     ViewBag.Title = "Index"; Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section class="grid">
-    <h1>Users</h1>
-    <table>
+<section class="content">
+    <h2>Users</h2>
+    <table class="grid"> 
         <thead>
             <tr>
+                <th>#</th>
                 <th>Name</th>
                 <th>Company</th>
                 <th>Email</th>
@@ -17,17 +18,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @for (var i = 0; i < Model.Count; i++)
             {
                 <tr>
-                    <td><span>@Html.Raw(item.Name)</span></td>
-                    <td><span>@Html.Raw(item.Company)</span></td>
-                    <td><span>@Html.Raw(item.Email)</span></td>
-                    <td><span>@Html.Raw(item.Phone)</span></td>
+                    <td><span>@(i + 1)</span></td>
+                    <td><span>@Html.ActionLink(Model[i].Name, "Details", "User", new { @id = Model[i].Id}, new { })</span></td>
+                    <td><span>@Html.Raw(Model[i].Company)</span></td>
+                    <td><span>@Html.Raw(Model[i].Email)</span></td>
+                    <td><span>@Html.Raw(Model[i].Phone)</span></td>
                     <td>
-                        @foreach (var tag in item.Tags)
+                        @foreach (var tag in Model[i].Tags)
                         {
-                            <span>@Html.Raw(tag)</span>
+                            <span>#@Html.Raw(tag)</span>
                         }
                     </td>
                 </tr>

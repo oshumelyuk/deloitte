@@ -8,5 +8,7 @@ namespace Deloitte.DAL.Interfaces
     public interface IUserRepository
     {
         Task<IList<UserData>> ListAllAsync();
+
+        Task<User> GetUserAsync(string userid);
     }
 }

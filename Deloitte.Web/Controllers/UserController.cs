@@ -21,5 +21,13 @@ namespace Deloitte.Web.Controllers
             var users = await userRepository.ListAllAsync();
             return View(users);
         }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult> Details(string id)
+        {
+            var user = await userRepository.GetUserAsync(id);
+            return View(user);
+        }
     }
 }
