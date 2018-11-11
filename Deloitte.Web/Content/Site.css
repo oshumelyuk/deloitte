@@ -1,0 +1,33 @@
+﻿html {
+   height: 100%;
+}
+
+body, .body-content {
+   min-height: 100%;
+   height: 100%;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+/* login */
+.login-left-panel {
+    background-image: url("/content/images/background_login.jpg");
+    height: 100%;
+    width: 50%;
+    float:left;
+}
+.login-right-panel{
+    background: none;
+    height: 100%;
+    width: 50%;
+    float: right;
+}
+

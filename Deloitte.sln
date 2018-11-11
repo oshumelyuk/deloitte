@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.Entities", "Deloitte.Entities\Deloitte.Entities.csproj", "{EF7394E3-B32D-417C-B80D-7183EC2FD968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.DAL.Interfaces", "Deloitte.DAL.Interfaces\Deloitte.DAL.Interfaces.csproj", "{125A7250-F1B3-4512-BE38-9513954E3DFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.Tests", "Deloitte.Tests\Deloitte.Tests.csproj", "{55708901-BD03-400A-AD66-B53B67BC0195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.Contracts", "Deloitte.Contracts\Deloitte.Contracts.csproj", "{294ED14A-2BC2-489D-BCD1-9DD9B5CED9E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.Web", "Deloitte.Web\Deloitte.Web.csproj", "{3975EB79-D38F-40DD-9B3F-4192488B6542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.DAL", "Deloitte.DAL\Deloitte.DAL.csproj", "{2A7332BD-48D2-47FA-B857-6A81BC92924B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF7394E3-B32D-417C-B80D-7183EC2FD968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF7394E3-B32D-417C-B80D-7183EC2FD968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF7394E3-B32D-417C-B80D-7183EC2FD968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF7394E3-B32D-417C-B80D-7183EC2FD968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{125A7250-F1B3-4512-BE38-9513954E3DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125A7250-F1B3-4512-BE38-9513954E3DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125A7250-F1B3-4512-BE38-9513954E3DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125A7250-F1B3-4512-BE38-9513954E3DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55708901-BD03-400A-AD66-B53B67BC0195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55708901-BD03-400A-AD66-B53B67BC0195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55708901-BD03-400A-AD66-B53B67BC0195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55708901-BD03-400A-AD66-B53B67BC0195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{294ED14A-2BC2-489D-BCD1-9DD9B5CED9E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{294ED14A-2BC2-489D-BCD1-9DD9B5CED9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{294ED14A-2BC2-489D-BCD1-9DD9B5CED9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{294ED14A-2BC2-489D-BCD1-9DD9B5CED9E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3975EB79-D38F-40DD-9B3F-4192488B6542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3975EB79-D38F-40DD-9B3F-4192488B6542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3975EB79-D38F-40DD-9B3F-4192488B6542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3975EB79-D38F-40DD-9B3F-4192488B6542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7332BD-48D2-47FA-B857-6A81BC92924B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7332BD-48D2-47FA-B857-6A81BC92924B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7332BD-48D2-47FA-B857-6A81BC92924B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7332BD-48D2-47FA-B857-6A81BC92924B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4
+		SolutionGuid = {A7B9C2F5-2AC2-4467-B954-2F9F3AD56C41}
+	EndGlobalSection
+EndGlobal
