@@ -26,7 +26,8 @@ namespace Deloitte.DAL
         {
             try
             {
-                var text = File.ReadAllText(usersFilePath);
+                var absolutePath = DeloitteHostingEnvironment.Get(usersFilePath);
+                var text = File.ReadAllText(absolutePath);
                 var parsed = JsonConvert.DeserializeObject<IEnumerable<User>>(text);
                 return parsed.ToList();
             }
@@ -38,7 +39,7 @@ namespace Deloitte.DAL
             return new List<User>(0);
         }
 
-        private const string usersFilePath = "data\\data.json";
+        private const string usersFilePath = "\\data\\data.json";
 
         #endregion
     }

@@ -27,11 +27,11 @@ namespace Deloitte.DAL
         private async Task WriteFormattedMessageAsync(string message)
         {
             //add semaphore
-            using (var stream = File.Open(logsFilePath, FileMode.OpenOrCreate, FileAccess.Write))
+           /* using (var stream = File.Open(logsFilePath, FileMode.OpenOrCreate, FileAccess.Write))
             {
                 var bytes = System.Text.Encoding.UTF8.GetBytes(message);
                 await stream.WriteAsync(bytes, 0, bytes.Length);
-            }
+            }*/
         }
 
         private const string logsFilePath = "data\\logs.txt";

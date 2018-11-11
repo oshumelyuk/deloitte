@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeloitteHostingEnvironment.cs" />
     <Compile Include="FileLogger.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -67,12 +68,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\accounts.json">
+    <Content Include="Data\accounts.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\data.json">
+    </Content>
+    <Content Include="Data\data.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

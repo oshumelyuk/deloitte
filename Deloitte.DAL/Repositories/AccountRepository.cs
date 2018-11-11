@@ -63,7 +63,8 @@ namespace Deloitte.DAL
         {
             try
             {
-                var text = File.ReadAllText(accountsFilePath);
+                var absolutePath = DeloitteHostingEnvironment.Get(accountsFilePath);
+                var text = File.ReadAllText(absolutePath);
                 var parsed = JsonConvert.DeserializeObject<IEnumerable<Account>>(text);
                 return parsed.ToDictionary(x => x.Login, x => x, StringComparer.OrdinalIgnoreCase);
             }
@@ -75,7 +76,7 @@ namespace Deloitte.DAL
             return new Dictionary<string, Account>(0);
         }
 
-        private const string accountsFilePath = "data\\accounts.json";
+        private const string accountsFilePath = "\\data\\accounts.json";
 
         #endregion
     }

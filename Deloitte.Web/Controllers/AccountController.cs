@@ -1,5 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Deloitte.DAL.Interfaces;
 using Deloitte.Web.ViewModels;
 
@@ -26,6 +29,11 @@ namespace Deloitte.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return await LogOut();
+            }
+
             if (!TryValidateModel(model))
             {
                 return View();
@@ -34,11 +42,23 @@ namespace Deloitte.Web.Controllers
             var validationResult = await accountRepository.ValidateAccountAsync(model.Login, model.Password);
             if (validationResult.IsValid)
             {
-               // AuthenticationManager.
-                HttpContext.Session["UserName"] = validationResult.Account.Name;
+                FormsAuthentication.SetAuthCookie(model.Login, model.RememberMe);
+                HttpContext.Session[SessionKeys.Username] = validationResult.Account.Name;
             }
 
             return RedirectToAction("Index", "User");
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult> LogOut()
+        {
+            HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, "");
+            cookie.Expires = DateTime.Now.AddYears(-1);
+            Response.Cookies.Add(cookie);
+
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "Account", null);
         }
     }
 }

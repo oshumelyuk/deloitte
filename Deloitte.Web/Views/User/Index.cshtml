@@ -1,10 +1,39 @@
 ﻿@model IEnumerable<Deloitte.Contracts.UserData>
 
-
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index"; Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<section class="grid">
+    <h1>Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Tags</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><span>@Html.Raw(item.Name)</span></td>
+                    <td><span>@Html.Raw(item.Company)</span></td>
+                    <td><span>@Html.Raw(item.Email)</span></td>
+                    <td><span>@Html.Raw(item.Phone)</span></td>
+                    <td>
+                        @foreach (var tag in item.Tags)
+                        {
+                            <span>@Html.Raw(tag)</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
 

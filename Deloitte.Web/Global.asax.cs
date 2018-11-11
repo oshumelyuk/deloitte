@@ -1,6 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.IO;
+using System.Web.Hosting;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Deloitte.DAL;
 using Deloitte.Web.App_Start;
 using DryIoc;
 using DryIoc.Mvc;
@@ -16,17 +19,20 @@ namespace Deloitte.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            /*  var container = new Container();
-              var resolver = new DryIocDependencyResolver(container);
-              DependencyResolver.SetResolver(resolver);
-              DependenciesConfig.RegisterDependencies();*/
-
             IContainer container = new Container();
             container = container.WithMvc(
                 throwIfUnresolved: type => type.IsController()
             );
 
             DependenciesConfig.RegisterDependencies(container);
+            DeloitteHostingEnvironment.Set((relativeUrl) =>
+            {
+                if (HostingEnvironment.IsDevelopmentEnvironment)
+                {
+                    relativeUrl = "\\bin" + relativeUrl;
+                }
+                return HostingEnvironment.MapPath(relativeUrl);
+            });
         }
     }
 }

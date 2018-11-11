@@ -1,4 +1,8 @@
-﻿.login-left-panel {
+﻿body, .body-content {
+   width: 99%;
+}
+
+.login-left-panel {
     background-image: url("/content/images/background_login.jpg");
     background-repeat: repeat-y;
     height: 100%;

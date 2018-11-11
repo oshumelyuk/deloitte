@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Deloitte.Web
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,9 +10,18 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <header class="container">
-    </header>
+    <header class="container"></header>
     <div class="container body-content">
+        <header>
+            <div id="userMenu">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <span>Welcome, @(Session[SessionKeys.Username] ?? User.Identity.Name)</span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>@Html.ActionLink("Log out", "logout", "account") </span>
+                }
+            </div>
+        </header>
         @RenderBody()
         <footer>
             <p>&copy; @DateTime.Now.Year | &copy;All rights reserved</p>
