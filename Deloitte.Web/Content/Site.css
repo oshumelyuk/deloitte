@@ -85,6 +85,11 @@ h1.logo {
     width: 80%;
 }
 
+.content h2 {
+    font-size: 20px;
+    padding: 10px 0px;
+}
+
 table.grid {
     width: 100%;
 }
@@ -122,7 +127,7 @@ table.grid tr td, table.grid tr th {
     position: relative;
 }
 
-#userTags .remove-link{
+#userTags .remove-link {
     color: darkred;
     display: inline-block;
     border: 1px solid darkred;
