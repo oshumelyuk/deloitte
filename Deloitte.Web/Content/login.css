@@ -1,0 +1,49 @@
+﻿.login-left-panel {
+    background-image: url("/content/images/background_login.jpg");
+    background-repeat: repeat-y;
+    height: 100%;
+    width: 50%;
+    float:left;
+    position: relative;
+}
+.login-right-panel{
+    background-color: #eee;
+    height: 100%;
+    width: 50%;
+    float: right;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 2.5em;
+}
+
+#loginForm{
+    max-width: 400px;
+    margin-left: 20%;
+    margin-top: 20%;
+}
+
+#loginForm .control-label{
+    text-align: left;
+}
+
+#loginForm .checkbox {
+    display: inline-block;
+}
+
+#loginForm .checkbox input[type="checkbox"] {
+    margin-left: 0px;
+}
+
+#loginBtn {
+    float: right;
+}
+
+.login-right-panel footer{
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    margin-right: 10px;
+}

@@ -22,9 +22,14 @@ namespace Deloitte.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/auth-styles").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/anonymous-styles").Include(
+              "~/Content/bootstrap.css",
+              "~/Content/site.css",
+              "~/Content/login.css"));
         }
     }
 }
